@@ -8,7 +8,7 @@ In most cases, the input is not large, and a brute force method is good enough. 
 
 The problem is solved using a really ugly implementation of bottom-up DP with "parent pointers" [1]. The subproblem can be written as
 
-$$X_{i,j} = \max_{\substack{i=0..k \\ j=i..n}}\{\min\limits_{k=0..j}(X_{i-1,k}, A_i - A_k)\}$$
+<a href="https://www.codecogs.com/eqnedit.php?latex=\mathcal{W}(A,f)&space;=&space;(T,\bar{f})" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\mathcal{W}(A,f)&space;=&space;(T,\bar{f})" title="\mathcal{W}(A,f) = (T,\bar{f})" /></a>
 
 where $X_{i,j}$ is the solution for choosing $j$ elements from the first $i$ items of the list (ordered), and $A_i$ is the ith number of the input sequence.
 
