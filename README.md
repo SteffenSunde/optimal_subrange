@@ -1,6 +1,6 @@
 
 Totally bikeshedding the process of choosing a subset of 
-steps outputted from the finite element software *Abaqus*.
+steps outputted from the finite element software [Abaqus](https://www.3ds.com/products-services/simulia/products/abaqus/abaquscae/).
 
 The problem consists of choosing k numbers of a given list, maximising spread. This can be translated into maximising the minimum distance between the points in the output. 
 
@@ -8,7 +8,7 @@ In most cases, the input is not large, and a brute force method is good enough. 
 
 The problem is solved using a really ugly implementation of bottom-up DP with "parent pointers" [1]. The subproblem can be written as
 
-$$ X[i, j] = max_{i=0..k, j=i..n}\left{min_{k=0..j}(X[i-1, k], A[i] - A[k])}\right $$
+$$X_{i,j} = \max_{\substack{i=0..k \\ j=i..n}}\{\min\limits_{k=0..j}(X_{i-1,k}, A_i - A_k)\}$$
 
 where $X_{i,j}$ is the solution for choosing $j$ elements from the first $i$ items of the list (ordered), and $A_i$ is the ith number of the input sequence.
 
