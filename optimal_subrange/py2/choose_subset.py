@@ -2,8 +2,11 @@ import numpy as np
 import operator
 
 """
-The python interpreter included in the Abaqus software package is of version 2.7....
+The python interpreter included in the Abaqus software package is of version 2.7,
+and its numpy version is 1.6. 
+
 This module should be compatible with Abaqus CAE 6-14 and 2017.
+
 """
 
 def choose_subset(numbers, k, sorted = True):
@@ -21,8 +24,8 @@ def choose_subset(numbers, k, sorted = True):
         numbers.sort()
 
     # Allocate the dynamic programming (dp) table and parent pointers (pp)
-    dp = np.full((k, n), -1.0)
-    pp = np.full((k, n), -1)
+    dp = -1 * np.ones((k, n))
+    pp = np.zeros((k, n))
 
     # Edge case, because choosing two points from a sorted list is always the extreme
     for j in range(1, n):
@@ -41,7 +44,7 @@ def choose_subset(numbers, k, sorted = True):
     result = [numbers[-1]]
     j = n-1
     for i in range(k-1, 0, -1):
-        result.append(numbers[pp[i, j]])
+        result.append(numbers[int(pp[i, j])])
         j = pp[i, j]
     result.reverse()
     
