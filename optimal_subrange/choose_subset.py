@@ -15,11 +15,11 @@ def choose_subset(numbers: List[int] , k: int, sorted: bool = True) -> List[int]
     if not sorted:
         numbers.sort()
 
-    # Pepare the dynamic programming (dp) table and parent pointers (pp)
+    # Allocate the dynamic programming (dp) table and parent pointers (pp)
     dp = [[-1 for _ in range(n)] for _ in range(k)]
     pp = [[-1 for _ in range(n)] for _ in range(k)]
 
-    # Edge case, because choosing two points is always the extreme
+    # Edge case, because choosing two points from a sorted list is always the extreme
     for j in range(1, n):
         dp[1][j] = numbers[j] - numbers[0]
         pp[1][j] = 0
