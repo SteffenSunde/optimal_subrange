@@ -9,9 +9,9 @@ In most cases, the input is not large, and a brute force method is good enough. 
 
 The problem is solved using a really ugly implementation of bottom-up DP with "parent pointers" [1]. The subproblem can be written as
 
-<a href="https://www.codecogs.com/eqnedit.php?latex=$$X_{i,j}&space;=&space;\max_{\substack{i=0..k&space;\\&space;j=i..n}}\{\min\limits_{k=0..j}(X_{i-1,k},&space;A_i&space;-&space;A_k)\}$$" target="_blank"><img src="https://latex.codecogs.com/gif.latex?$$X_{i,j}&space;=&space;\max_{\substack{i=0..k&space;\\&space;j=i..n}}\{\min\limits_{k=0..j}(X_{i-1,k},&space;A_i&space;-&space;A_k)\}$$" title="$$X_{i,j} = \max_{\substack{i=0..k \\ j=i..n}}\{\min\limits_{k=0..j}(X_{i-1,k}, A_i - A_k)\}$$" /></a>
+<img src="https://render.githubusercontent.com/render/math?math=X_{i,j} = \max\limits_{i=0..k \\ j=i..n}\{\min\limits_{k=0..j}(X_{i-1,k}, A_i - A_k)\}">
 
-where <a href="https://www.codecogs.com/eqnedit.php?latex=X_{i,j}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?X_{i,j}" title="X_{i,j}" /></a> is the solution for choosing k elements from the first i items of the list (ordered), and <a href="https://www.codecogs.com/eqnedit.php?latex=$A_i$" target="_blank"><img src="https://latex.codecogs.com/gif.latex?$A_i$" title="$A_i$" /></a> is the ith number of the input sequence.
+where <img src="https://render.githubusercontent.com/render/math?math=$X_{i,j}"> is the solution for choosing k elements from the first i items of the list (ordered), and <img src="https://render.githubusercontent.com/render/math?math=$A_i$"> is the ith number of the input sequence.
 
 Warning: This 
 
